@@ -1,0 +1,2 @@
+### The only requirement is scapy, everything else should come by default with python ###
+scapy
