@@ -1,0 +1,2 @@
+# dnz
+DNS data exfiltration
